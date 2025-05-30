@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ExplainThis.AI",
+  "description": "Explain anything you highlight on any webpage in your learning style.",
+  "version": "0.1",
+  "permissions": ["contextMenus", "activeTab", "scripting", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon.png"
+  }
+}
